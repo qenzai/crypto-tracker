@@ -89,7 +89,7 @@ CREATE DATABASE crypto_tracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=crypto_tracker;User=root;Password=ВАШ_ПАРОЛЬ;Port=3306;"
+    "DefaultConnection": "Server=localhost;Database=crypto_tracker;User=root;Password=ПАРОЛЬ;Port=3306;"
   },
   "Jwt": {
     "Key": "your-super-secret-key-min-32-chars-long!!",
@@ -104,7 +104,7 @@ CREATE DATABASE crypto_tracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 }
 ```
 
-> ⚠️ Поміняйте рядок підключення та `Jwt:Key` (мінімум 32 символи)
+>  Поміняйте рядок підключення та `Jwt:Key` (мінімум 32 символи)
 
 #### Встановлення та запуск
 
