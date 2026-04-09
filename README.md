@@ -31,43 +31,43 @@
 
 ```
 crypto-tracker/
-├── CryptoTracker.API/               ← .NET 8 Backend
+├── CryptoTracker.API/                .NET 8 Backend
 │   ├── Controllers/
-│   │   ├── AuthController.cs        ← POST /api/auth/login, /register
-│   │   ├── CryptoCoinsController.cs ← CRUD /api/cryptocoins
-│   │   └── PricesAndStatsController.cs ← /api/coins/{id}/prices|stats
+│   │   ├── AuthController.cs         POST /api/auth/login, /register
+│   │   ├── CryptoCoinsController.cs  CRUD /api/cryptocoins
+│   │   └── PricesAndStatsController.cs  /api/coins/{id}/prices|stats
 │   ├── Data/
-│   │   └── AppDbContext.cs          ← EF Core DbContext + Seed
+│   │   └── AppDbContext.cs           EF Core DbContext + Seed
 │   ├── Models/
 │   │   ├── User.cs
 │   │   ├── CryptoCoin.cs
 │   │   └── CryptoPrice.cs
 │   ├── Services/
-│   │   ├── Auth/AuthService.cs      ← JWT генерація, BCrypt хешування
-│   │   ├── CoinGecko/               ← HTTP клієнт до CoinGecko API
-│   │   ├── Crypto/CryptoPriceService.cs ← CRUD + агрегація (min/max/avg)
-│   │   └── Background/              ← Автоматичний парсинг за розкладом
-│   ├── DTOs/                        ← Data Transfer Objects
-│   ├── Program.cs                   ← DI, JWT, Swagger, CORS, EF Core
+│   │   ├── Auth/AuthService.cs       JWT генерація, BCrypt хешування
+│   │   ├── CoinGecko/                HTTP клієнт до CoinGecko API
+│   │   ├── Crypto/CryptoPriceService.cs  CRUD + агрегація (min/max/avg)
+│   │   └── Background/               Автоматичний парсинг за розкладом
+│   ├── DTOs/                         Data Transfer Objects
+│   ├── Program.cs                    DI, JWT, Swagger, CORS, EF Core
 │   └── appsettings.json
 │
-└── crypto-tracker-frontend/         ← Angular 17 Frontend
+└── crypto-tracker-frontend/          Angular 17 Frontend
     └── src/app/
         ├── components/
-        │   ├── login/               ← Форма входу
-        │   ├── register/            ← Форма реєстрації
-        │   ├── navbar/              ← Навігаційна панель
-        │   ├── dashboard/           ← Картки монет, авто-оновлення 30с
-        │   ├── coins/               ← CRUD таблиця монет
-        │   └── stats/               ← Статистика + Chart.js графік
+        │   ├── login/                Форма входу
+        │   ├── register/             Форма реєстрації
+        │   ├── navbar/               Навігаційна панель
+        │   ├── dashboard/            Картки монет, авто-оновлення 30с
+        │   ├── coins/                CRUD таблиця монет
+        │   └── stats/                Статистика + Chart.js графік
         ├── services/
-        │   ├── auth.service.ts      ← Login, register, JWT зберігання
-        │   └── crypto.service.ts    ← API виклики до backend
+        │   ├── auth.service.ts       Login, register, JWT зберігання
+        │   └── crypto.service.ts     API виклики до backend
         ├── interceptors/
-        │   └── auth.interceptor.ts  ← Автоматичний Bearer токен
+        │   └── auth.interceptor.ts   Автоматичний Bearer токен
         ├── guards/
-        │   └── auth.guard.ts        ← Захист маршрутів
-        └── models/models.ts         ← TypeScript інтерфейси
+        │   └── auth.guard.ts         Захист маршрутів
+        └── models/models.ts          TypeScript інтерфейси
 ```
 
 ---
