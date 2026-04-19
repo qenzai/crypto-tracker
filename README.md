@@ -1,7 +1,7 @@
 # CryptoTracker 🪙
 
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)
-![Angular](https://img.shields.io/badge/Angular-17-DD0031?logo=angular)
+![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)
+![Angular](https://img.shields.io/badge/Angular-21-DD0031?logo=angular)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -16,13 +16,13 @@
 
 | Шар | Технологія |
 |-----|-----------|
-| Backend | .NET 8 Web API |
+| Backend | .NET 10 Web API |
 | База даних | MySQL 8 + Entity Framework Core (Pomelo) |
 | Авторизація | JWT Bearer Tokens + BCrypt |
 | Парсинг даних | CoinGecko API (безкоштовний) |
 | Фоновий сервіс | .NET BackgroundService |
 | API документація | Swagger / OpenAPI |
-| Frontend | Angular 17 (standalone components) |
+| Frontend | Angular 21 (standalone components) |
 | Графіки | Chart.js 4 |
 
 ---
@@ -31,7 +31,7 @@
 
 ```
 crypto-tracker/
-├── CryptoTracker.API/               ← .NET 8 Backend
+├── CryptoTracker.API/               ← .NET 10 Backend
 │   ├── Controllers/
 │   │   ├── AuthController.cs        ← POST /api/auth/login, /register
 │   │   ├── CryptoCoinsController.cs ← CRUD /api/cryptocoins
@@ -51,7 +51,7 @@ crypto-tracker/
 │   ├── Program.cs                   ← DI, JWT, Swagger, CORS, EF Core
 │   └── appsettings.json
 │
-└── crypto-tracker-frontend/         ← Angular 17 Frontend
+└── crypto-tracker-frontend/         ← Angular 21 Frontend
     └── src/app/
         ├── components/
         │   ├── login/               ← Форма входу
@@ -82,7 +82,7 @@ crypto-tracker/
 CREATE DATABASE crypto_tracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-### 2. Backend (.NET 8)
+### 2. Backend (.NET 10)
 
 #### Налаштування `appsettings.json`
 
@@ -112,6 +112,7 @@ CREATE DATABASE crypto_tracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 cd CryptoTracker.API
 
 # Встановити dotnet-ef (якщо ще не встановлено)
+# Потрібен .NET 10 SDK: https://dotnet.microsoft.com/download/dotnet/10.0
 dotnet tool install --global dotnet-ef
 
 # Відновити пакети
@@ -131,12 +132,13 @@ API буде доступне за адресою: **http://localhost:5000**
 
 Swagger UI: **http://localhost:5000/swagger**
 
-### 3. Frontend (Angular 17)
+### 3. Frontend (Angular 21)
 
 ```bash
 cd crypto-tracker-frontend
 
 # Встановити залежності
+# Потрібен Node.js 22+: https://nodejs.org
 npm install
 
 # Запустити dev-сервер

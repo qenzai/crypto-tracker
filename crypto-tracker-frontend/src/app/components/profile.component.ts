@@ -87,11 +87,11 @@ import { ToastService } from '../services/toast.service';
               <span class="stack-lbl">База даних</span>
             </div>
             <div class="stack-box">
-              <span class="stack-num" style="color:#378add">.NET 8</span>
+              <span class="stack-num" style="color:#378add">.NET 10</span>
               <span class="stack-lbl">Backend API</span>
             </div>
             <div class="stack-box">
-              <span class="stack-num" style="color:#c84b9e">Angular 17</span>
+              <span class="stack-num" style="color:#c84b9e">Angular 21</span>
               <span class="stack-lbl">Frontend</span>
             </div>
             <div class="stack-box">

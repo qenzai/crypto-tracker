@@ -275,6 +275,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private crypto: CryptoService) {}
 
   ngOnInit(): void {
+    // Через 5 секунд прибираємо skeleton в будь-якому разі
+    setTimeout(() => { if (this.coins.length === 0) this.loading = false; }, 5000);
+
     // Основний інтервал оновлення даних
     interval(30_000).pipe(
       startWith(0),
@@ -286,12 +289,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
       takeUntil(this.destroy$)
     ).subscribe({
       next: coins => {
+        console.log('Дашборд: отримано', coins.length, 'монет');
         this.coins = coins;
         this.loading = false;
         this.error = '';
       },
-      error: () => {
-        this.error = 'Помилка завантаження даних';
+      error: (err) => {
+        console.error('Дашборд: помилка', err);
+        this.error = 'Помилка завантаження даних: ' + (err.message || 'unknown');
         this.loading = false;
       }
     });
