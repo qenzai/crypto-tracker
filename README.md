@@ -33,41 +33,41 @@
 crypto-tracker/
 ├── CryptoTracker.API/               ← .NET 10 Backend
 │   ├── Controllers/
-│   │   ├── AuthController.cs        ← POST /api/auth/login, /register
-│   │   ├── CryptoCoinsController.cs ← CRUD /api/cryptocoins
-│   │   └── PricesAndStatsController.cs ← /api/coins/{id}/prices|stats
+│   │   ├── AuthController.cs         POST /api/auth/login, /register
+│   │   ├── CryptoCoinsController.cs  CRUD /api/cryptocoins
+│   │   └── PricesAndStatsController.cs  /api/coins/{id}/prices|stats
 │   ├── Data/
-│   │   └── AppDbContext.cs          ← EF Core DbContext + Seed
+│   │   └── AppDbContext.cs           EF Core DbContext + Seed
 │   ├── Models/
 │   │   ├── User.cs
 │   │   ├── CryptoCoin.cs
 │   │   └── CryptoPrice.cs
 │   ├── Services/
-│   │   ├── Auth/AuthService.cs      ← JWT генерація, BCrypt хешування
-│   │   ├── CoinGecko/               ← HTTP клієнт до CoinGecko API
-│   │   ├── Crypto/CryptoPriceService.cs ← CRUD + агрегація (min/max/avg)
-│   │   └── Background/              ← Автоматичний парсинг за розкладом
-│   ├── DTOs/                        ← Data Transfer Objects
-│   ├── Program.cs                   ← DI, JWT, Swagger, CORS, EF Core
+│   │   ├── Auth/AuthService.cs       JWT генерація, BCrypt хешування
+│   │   ├── CoinGecko/                HTTP клієнт до CoinGecko API
+│   │   ├── Crypto/CryptoPriceService.cs  CRUD + агрегація (min/max/avg)
+│   │   └── Background/               Автоматичний парсинг за розкладом
+│   ├── DTOs/                         Data Transfer Objects
+│   ├── Program.cs                    DI, JWT, Swagger, CORS, EF Core
 │   └── appsettings.json
 │
 └── crypto-tracker-frontend/         ← Angular 21 Frontend
     └── src/app/
         ├── components/
-        │   ├── login/               ← Форма входу
-        │   ├── register/            ← Форма реєстрації
-        │   ├── navbar/              ← Навігаційна панель
-        │   ├── dashboard/           ← Картки монет, авто-оновлення 30с
-        │   ├── coins/               ← CRUD таблиця монет
-        │   └── stats/               ← Статистика + Chart.js графік
+        │   ├── login/                Форма входу
+        │   ├── register/             Форма реєстрації
+        │   ├── navbar/               Навігаційна панель
+        │   ├── dashboard/            Картки монет, авто-оновлення 30с
+        │   ├── coins/                CRUD таблиця монет
+        │   └── stats/                Статистика + Chart.js графік
         ├── services/
-        │   ├── auth.service.ts      ← Login, register, JWT зберігання
-        │   └── crypto.service.ts    ← API виклики до backend
+        │   ├── auth.service.ts       Login, register, JWT зберігання
+        │   └── crypto.service.ts     API виклики до backend
         ├── interceptors/
-        │   └── auth.interceptor.ts  ← Автоматичний Bearer токен
+        │   └── auth.interceptor.ts   Автоматичний Bearer токен
         ├── guards/
-        │   └── auth.guard.ts        ← Захист маршрутів
-        └── models/models.ts         ← TypeScript інтерфейси
+        │   └── auth.guard.ts         Захист маршрутів
+        └── models/models.ts          TypeScript інтерфейси
 ```
 
 ---
@@ -89,7 +89,7 @@ CREATE DATABASE crypto_tracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=crypto_tracker;User=root;Password=ВАШ_ПАРОЛЬ;Port=3306;"
+    "DefaultConnection": "Server=localhost;Database=crypto_tracker;User=root;Password=ПАРОЛЬ;Port=3306;"
   },
   "Jwt": {
     "Key": "your-super-secret-key-min-32-chars-long!!",
@@ -104,7 +104,7 @@ CREATE DATABASE crypto_tracker CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 }
 ```
 
-> ⚠️ Поміняйте рядок підключення та `Jwt:Key` (мінімум 32 символи)
+>  Поміняйте рядок підключення та `Jwt:Key` (мінімум 32 символи)
 
 #### Встановлення та запуск
 
